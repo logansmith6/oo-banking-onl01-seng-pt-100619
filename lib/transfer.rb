@@ -4,7 +4,7 @@ class Transfer
 
   attr_accessor :sender, :receiver, :status, :amount
 
-  @@executed_huh = 0
+  
   @@backup_amount = 0
   def initialize(sender, receiver, amount, status = "pending")
     @sender = sender
@@ -29,7 +29,7 @@ class Transfer
         @sender.balance -= @amount
         @receiver.balance += @amount
         @amount = 0
-        @@executed_huh = 1
+        
       else
         @status = "rejected"
         "Transaction rejected. Please check your account balance."
